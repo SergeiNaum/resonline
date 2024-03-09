@@ -44,7 +44,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"values": [144, 120, 500]}
 
 
 The query should return a list of all values on the server for which prime_factor is a multiplier. If prime_factor is not prime, it will return an empty response.  
-http://127.0.0.1:8000/values/{int: number}
+http://0.0.0.0:80000/values/{int:number}
 
 ```
 curl http://0.0.0.0:8000/values/5
