@@ -21,37 +21,35 @@ docker-compose up --scale api=2
 ---
 ### Available methods for API requestsAvailable methods for API requests
 
-To verify the initial inspection by GET method:
-return:
-    "message": "Connected to Redis database {num}"  
-    [key: value]
+**To verify the initial inspection by GET method:  
+ return: "message": "Connected to Redis database {num}" [key: value]**
 
 ```
 curl http://0.0.0.0:8000/
 ```
 
-SET value entry in redis by POST method if not Query Params ttl is passed ttl=infinity
+**SET value entry in redis by POST method if not Query Params ttl is passed ttl=infinity**
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"values": [144, 120, 500]}' http://0.0.0.0:8000/values
 ```
 
 
-SET value entry in redis by POST method if Query Params ttl is passed ?ttl=5 - data lifetime in redis
+**SET value entry in redis by POST method if Query Params ttl is passed ?ttl=5 - data lifetime in redis**
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"values": [144, 120, 500]}' http://0.0.0.0:8000/values?ttl=5
 ```
 
 
-The query should return a list of all values on the server for which prime_factor is a multiplier. If prime_factor is not prime, it will return an empty response.  
-http://0.0.0.0:80000/values/{int:number}
+**The query should return a list of all values on the server for which prime_factor is a multiplier. If prime_factor is not prime, it will return an empty response.  
+http://0.0.0.0:80000/values/{int:number}**
 
 ```
 curl http://0.0.0.0:8000/values/5
 ```
 
-To stop the microservice, execute the command
+**To stop the microservice, execute the command**
 
 ```
 make docker-compose_down
