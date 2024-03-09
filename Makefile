@@ -11,7 +11,7 @@ black:
 	black ./app
 
 docker-compose_up:
-	docker-compose up --scale app=2
+	docker-compose up --scale api=2
 
 docker-compose_down:
 	docker-compose docker-compose down -v

@@ -1,20 +1,13 @@
-#services:
-#  myapp:
-#    image: myapp_image
-#    deploy:
-#      replicas: ${REPLICAS:-1}
+networks:
+  default:
+    driver: bridge
 
 
 services:
   api:
     image: sergeynaum/resoline:latest
-    deploy:
-      replicas: 1
-    container_name: app
     env_file:
       - ./docker/env/.env
-    ports:
-      - 8000:8000
     depends_on:
       - database
 
@@ -29,7 +22,7 @@ services:
     image: nginx:stable-alpine
     restart: always
     ports:
-      - "80:80"
+      - "8000:8000"
     volumes:
       - ./docker/nginx:/etc/nginx/conf.d:ro
     links:
