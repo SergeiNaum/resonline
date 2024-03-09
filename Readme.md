@@ -1,3 +1,4 @@
+[![Lint Code](https://github.com/SergeiNaum/resonline/actions/workflows/check.yml/badge.svg)](https://github.com/SergeiNaum/resonline/actions/workflows/check.yml)
 
 # Test task for the position of middle python backend developer from resoline company
 
