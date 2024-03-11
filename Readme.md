@@ -11,6 +11,19 @@
 docker pull sergeynaum/resoline:latest
 ```
 ---
+
+##### create directory {dirname} and navigate to it
+
+```
+mkdir app && cd app
+```
+
+---
+
+##### create file docker-compose.yml and copy the contents from here: https://github.com/SergeiNaum/resonline/blob/master/docker-compose.yml
+
+---
+
 ##### Start the microservice by executing the command where app={nunber} number of application replications
 ```
 docker-compose up --scale api=2
